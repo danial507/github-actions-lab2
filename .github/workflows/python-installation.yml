@@ -17,8 +17,8 @@ jobs:
           exclude: #added
             - os: macos-latest #added
               py-version: 3.9 #added
-    steps:
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
+      steps:
+       - name: Set up Python
+         uses: actions/setup-python@v4
+         with:
           python-version: '${{ matrix.py-version }}'
