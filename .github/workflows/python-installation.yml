@@ -1,9 +1,9 @@
 name: Installing Python
 'on':
-- push
-  jobs:
+  - push  
+jobs:
     build:
-    runs-on: '${{ matrix.os }}'
+      runs-on: '${{ matrix.os }}'
       strategy:
         matrix:
           os:
@@ -17,8 +17,8 @@ name: Installing Python
           exclude: #added
             - os: macos-latest #added
               py-version: 3.9 #added
-  steps:
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '${{ matrix.py-version }}'
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '${{ matrix.py-version }}'
